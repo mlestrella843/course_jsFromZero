@@ -1,0 +1,19 @@
+input{
+    font-size: 2em;
+    padding: .25em;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.ball{
+    --size:60px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: red;
+    margin: auto;
+}
