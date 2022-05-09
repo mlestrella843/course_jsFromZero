@@ -63,11 +63,12 @@ pauseButton.addEventListener('click', () => {
     video.pause()
 }) */
 
-//Propagacion
+//Propagacion y Delegacion 
 //el de elemento
 //e de evento
 //e.target es el punto mas profundo donde el evento se origina
 
+/*
 document.querySelectorAll('div').forEach( el => {
     el.addEventListener('click', e => {
         console.log(`Hiciste click en el div ${e.target.id}`)
@@ -75,4 +76,22 @@ document.querySelectorAll('div').forEach( el => {
         //si no quiero que el evento se propague hago lo siguiente
         e.stopPropagation()
     })
+})
+
+*/
+//Para que detecte cuando se hace un clik en una de las imagenes de la galeria
+// Delegacion de eventos detecta cuando se hizo el evento en el papa
+//y luego se averigua en cual de los elementos hijos ocurrio el evento.
+
+//AQUI ME MUESTRA EN CUAL IMAGENE EXACTAMENTE HICE EL CLICK
+
+
+const gallery = document.getElementById('gallery')
+
+gallery.addEventListener('click', e => {
+    const t = e.target
+    const images = Array.from(gallery.querySelectorAll('img'))
+    i = images.indexOf(t)
+    console.log(`Hiciste click en la imagen ${i + 1}`)
+
 })
