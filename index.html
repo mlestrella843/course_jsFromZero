@@ -63,14 +63,35 @@
 
  <script src="event_form.js"></script>  -->
 
-<!-- Eventos Multimedia-->
+<!-- Eventos Multimedia
+
 
 <video id="video" class="video" src="videos/Copia de IMG-1779.MOV"></video>
 
 <button id="play">Play</button>
 <button id="pause">Pause</button>
 
+<script src="event_dom.js"></script>   -->
+
+
+
+<!-- Eventos PROPAGACION
+Cuando se hace click en un div hijo se propagara hacia afuera
+click en div 3, se propagara desde adentro hacias los otros
+dos, dando coomo resultado 3 clicks, en el div 2, dos clicks
+y en el div 1, 1 click, para verlo hemos usado la consola-->
+
+<div id="div-1">
+    <div id="div-2">
+        <div id="div-3">
+            Click
+        </div>
+    </div>
+</div>
+
+
 <script src="event_dom.js"></script>
+
 
 </body>
 </html> 

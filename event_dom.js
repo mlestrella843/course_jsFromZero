@@ -50,6 +50,7 @@ addEventListener('resize', e => {
 //los eventos tambien pueden ejecutarse, no solo escucharse con addevenlistener
 //por ejemplo en video.play estoy ejecutando directamente el evento de play.
 
+/*
 const video = document.getElementById('video')
 const playButton = document.getElementById('play')
 const pauseButton = document.getElementById('pause')
@@ -60,5 +61,18 @@ playButton.addEventListener('click', () => {
 
 pauseButton.addEventListener('click', () => {
     video.pause()
-})
+}) */
 
+//Propagacion
+//el de elemento
+//e de evento
+//e.target es el punto mas profundo donde el evento se origina
+
+document.querySelectorAll('div').forEach( el => {
+    el.addEventListener('click', e => {
+        console.log(`Hiciste click en el div ${e.target.id}`)
+
+        //si no quiero que el evento se propague hago lo siguiente
+        e.stopPropagation()
+    })
+})
